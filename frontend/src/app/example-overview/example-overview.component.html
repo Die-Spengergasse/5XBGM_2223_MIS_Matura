@@ -1,0 +1,10 @@
+<table *ngFor="let exampleItem of exampleData; index as i">
+    <tr>
+        <td>{{ exampleItem.id }}</td>
+        <td>{{ exampleItem.title }}</td>
+        <td>{{ exampleItem.description }}</td>
+        <td>{{ exampleItem.creationDateTime }}</td>
+    </tr>
+</table>
+
+<a href="/exampleform/new"  >Add example</a>

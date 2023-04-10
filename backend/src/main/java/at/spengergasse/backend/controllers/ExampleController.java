@@ -29,7 +29,7 @@ public class ExampleController {
     ExampleModel putExampleModel(@RequestBody ExampleModel exampleModel){
         return exampleRepository.save(exampleModel);
     }
-    
+
     @GetMapping("/{id}")
     ExampleModel getExampleModel(@PathVariable Long id){
         return exampleRepository.findById(id).orElse(null);

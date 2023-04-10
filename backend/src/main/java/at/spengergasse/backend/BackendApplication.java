@@ -17,9 +17,6 @@ public class BackendApplication {
 
 	@Bean
 	public Gson dateAwareGSON(){
-
-
-
 		return new GsonBuilder()
 				.setPrettyPrinting()
 				.serializeNulls()
@@ -28,7 +25,7 @@ public class BackendApplication {
 				.create();
 	}
 
-	public static void main(String[] args) {
+	public static void main(String... args) {
 		SpringApplication.run(BackendApplication.class, args);
 	}
 

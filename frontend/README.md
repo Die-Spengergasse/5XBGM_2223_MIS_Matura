@@ -27,5 +27,82 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 
-todo mysql-option hinzufügen
-    - am besten mit XAMPP default logindaten
+## Example implementation Medication
+> [Location FHIR Docs](https://build.fhir.org/location.html)
+
+
+Resulting Structure:
+```json
+{
+  "resourceType" : "Location",
+  "id" : "1",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Burgers UMC, South Wing, second floor</div>"
+  },
+  "identifier" : [{
+    "value" : "B1-S.F2"
+  }],
+  "status" : "active",
+  "name" : "South Wing, second floor",
+  "alias" : ["BU MC, SW, F2",
+  "Burgers University Medical Center, South Wing, second floor"],
+  "description" : "Second floor of the Old South Wing, formerly in use by Psychiatry",
+  "mode" : "instance",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "phone",
+      "value" : "2328",
+      "use" : "work"
+    },
+    {
+      "system" : "fax",
+      "value" : "2329",
+      "use" : "work"
+    },
+    {
+      "system" : "email",
+      "value" : "second wing admissions"
+    }]
+  },
+  {
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://sampleorg.com/southwing",
+      "use" : "work"
+    }]
+  }],
+  "address" : {
+    "use" : "work",
+    "line" : ["Galapagosweg 91, Building A"],
+    "city" : "Den Burg",
+    "postalCode" : "9105 PZ",
+    "country" : "NLD"
+  },
+  "form" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/location-physical-type",
+      "code" : "wi",
+      "display" : "Wing"
+    }]
+  },
+  "position" : {
+    "longitude" : -83.6945691,
+    "latitude" : 42.25475478,
+    "altitude" : 0
+  },
+  "managingOrganization" : {
+    "reference" : "Organization/f001"
+  },
+  "characteristic" : [{
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/location-characteristic",
+      "code" : "wheelchair",
+      "display" : "Wheelchair accessible"
+    }]
+  }],
+  "endpoint" : [{
+    "reference" : "Endpoint/example"
+  }]
+}
+```

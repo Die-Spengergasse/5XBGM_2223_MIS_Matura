@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Example } from 'src/models/example';
 import { ExampleService } from '../example.service';
 
@@ -11,7 +11,12 @@ import { ExampleService } from '../example.service';
 })
 export class ExampleFormComponent implements OnInit {
 
-  constructor(private exampleService: ExampleService, private formBuilder: FormBuilder, private route: ActivatedRoute) { }
+  constructor(
+    private exampleService: ExampleService, 
+    private formBuilder: FormBuilder, 
+    private route: ActivatedRoute, 
+    private router: Router 
+    ) { }
 
 
   emptyExample: Example = {
@@ -62,6 +67,7 @@ export class ExampleFormComponent implements OnInit {
       console.log(updatedObject);
       this.exampleService.add(updatedObject).subscribe(response => {
         console.log(response);
+        this.router.navigate(["/exampleoverview"]);
         
       });
     }

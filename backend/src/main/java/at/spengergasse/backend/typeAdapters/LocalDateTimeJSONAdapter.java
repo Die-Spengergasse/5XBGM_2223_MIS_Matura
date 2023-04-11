@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -22,9 +23,12 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
+@Component
 public class LocalDateTimeJSONAdapter implements JsonDeserializer<LocalDateTime>, JsonSerializer<LocalDateTime> {
 
-    private static final DateTimeFormatter javascriptDateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.GERMAN);
+    private static final DateTimeFormatter javascriptDateFormat = 
+        DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.GERMAN);
+
 
     @Override
     public JsonElement serialize(LocalDateTime datetime, Type typeOfSrc, JsonSerializationContext context) {

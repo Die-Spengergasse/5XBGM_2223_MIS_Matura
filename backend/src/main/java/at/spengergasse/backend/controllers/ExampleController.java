@@ -26,7 +26,10 @@ public class ExampleController {
     }
 
     @PutMapping("/")
-    ExampleModel putExampleModel(@RequestBody ExampleModel exampleModel){
+    ExampleModel putExampleModel(@RequestBody String exampleModelStr){
+
+        ExampleModel exampleModel =  gson.fromJson(exampleModelStr, ExampleModel.class);
+
         return exampleRepository.save(exampleModel);
     }
 

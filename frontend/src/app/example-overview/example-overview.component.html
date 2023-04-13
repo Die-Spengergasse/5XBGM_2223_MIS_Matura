@@ -5,6 +5,12 @@
         <td>{{ exampleItem.description }}</td>
         <td>{{ exampleItem.creationDateTime }}</td>
     </tr>
+    <tr>
+        <table *ngFor="let comment of exampleItem.comments">
+            <td>{{comment.username}}</td>
+            <td>{{comment.text}}</td>
+        </table>
+    </tr>
 </table>
 
-<a href="/exampleform/new"  >Add example</a>
+<a href="/exampleform/0"  >Add example</a>

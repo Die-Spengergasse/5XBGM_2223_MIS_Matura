@@ -11,7 +11,7 @@ export class ExampleOverviewComponent implements OnInit {
 
   constructor(private exampleService: ExampleService) { }
 
-  exampleData: Example[] = [];
+  exampleData: any[] = [];
 
   ngOnInit(): void {
     this.exampleService.getAll().subscribe((data: Example[]) => {

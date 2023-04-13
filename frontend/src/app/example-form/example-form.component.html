@@ -14,5 +14,20 @@
         <input type="date" id="creationDateTime" formControlName="creationDateTime">
       </div>
 
+      Comments: <button (click)="addComment()">+</button>
+      <div *ngFor="let comment of getCommentControls(); index as i" [formGroup]="comment" >
+        <div>
+          <label >User:</label>
+          <input type="text" formControlName="username" />
+        </div>
+        <div>
+          <label >Text:</label>
+          <textarea formControlName="text" ></textarea>
+          
+        </div>
+        <button (click)="removeComment(i)">-</button>
+        <hr>
+      </div>
+
       <button (click)="onSubmit()">Submit</button>
 </form>  

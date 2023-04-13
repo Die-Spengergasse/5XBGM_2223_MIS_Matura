@@ -1,0 +1,12 @@
+<form [formGroup]="medicationForm" >
+
+
+
+    <div [formGroup]="getBatchFormGroup()" >
+        <input type="text" formControlName="lotNumber" />
+        <input type="date" formControlName="expirationDate" />
+    </div>
+
+
+      <!--<button (click)="onSubmit()">Submit</button>-->
+</form>  

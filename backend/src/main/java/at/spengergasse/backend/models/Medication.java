@@ -1,5 +1,7 @@
 package at.spengergasse.backend.models;
 
+import java.util.UUID;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,7 +21,7 @@ public class Medication {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id; 
+    UUID id; 
 
     @OneToOne
     Batch batch;

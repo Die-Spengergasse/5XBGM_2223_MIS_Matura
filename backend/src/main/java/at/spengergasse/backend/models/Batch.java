@@ -4,6 +4,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 import jakarta.annotation.Nullable;
 import jakarta.persistence.Column;
@@ -23,7 +24,7 @@ public class Batch {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id; 
+    UUID id; 
 
     @Nullable()
     @Column(name = "ba_lotNumber")

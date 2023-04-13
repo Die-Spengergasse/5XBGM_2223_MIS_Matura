@@ -21,3 +21,5 @@ Starten des Frontends mit:
 `ng serve`
 
 Dieses Repository kann gerne auch zum Üben genommen werden
+
+

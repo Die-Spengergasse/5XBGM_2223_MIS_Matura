@@ -31,6 +31,7 @@ export class ExampleFormComponent implements OnInit {
     title: new FormControl<string>(this.emptyExample.title),
     description: new FormControl<string>(this.emptyExample.description),
     creationDateTime: new FormControl<Date>(this.emptyExample.creationDateTime)
+    // todo create subobject, array etc. 
   });
 
   ngOnInit(): void {
